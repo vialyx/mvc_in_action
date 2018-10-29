@@ -14,7 +14,7 @@ enum FeedModelError: Error {
 
 extension FeedModelError: LocalizedError {
     
-    var localizedDescription: String {
+    var errorDescription: String? {
         switch self {
         case .noResourceFile(let name):
             return "Resource \(name) file not exist"
