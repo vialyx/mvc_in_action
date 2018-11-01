@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ep8-5n-pqE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p19-pm-Z85">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="OaD-fB-F7U">
+            <objects>
+                <navigationController id="p19-pm-Z85" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KiL-aq-yoD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ep8-5n-pqE" kind="relationship" relationship="rootViewController" id="dtv-Qo-TKJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTv-5e-WHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1324" y="116"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="n8h-mt-lzl">
             <objects>
@@ -18,11 +34,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v2J-hi-zdu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YjI-U4-TuB">
-                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <rect key="frame" x="169" y="347" width="37" height="37"/>
                                 <color key="color" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </activityIndicatorView>
                         </subviews>
@@ -41,6 +57,7 @@
                             <outlet property="tableView" destination="v2J-hi-zdu" id="zLN-8c-CJm"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Root Controller" id="fPM-QT-And"/>
                     <connections>
                         <segue destination="APj-V5-82i" kind="show" identifier="showDetails" id="2Qi-w3-8Fi"/>
                     </connections>
@@ -63,26 +80,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QYO-HZ-MpC">
-                                <rect key="frame" x="47" y="203" width="281" height="281"/>
+                                <rect key="frame" x="47" y="225" width="281" height="281"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QYO-HZ-MpC" secondAttribute="height" multiplier="1:1" id="HL9-IB-zDS"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jae-GF-Ul8">
-                                <rect key="frame" x="166.5" y="166" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="188" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro1-zu-vcu">
-                                <rect key="frame" x="320" y="36" width="39" height="30"/>
+                                <rect key="frame" x="320" y="80" width="39" height="30"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <segue destination="zEa-mb-3St" kind="unwind" unwindAction="unwindWithSegue:" id="dYH-he-KC9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYo-cQ-hAY">
-                                <rect key="frame" x="166.5" y="500" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="522" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -107,6 +124,13 @@
                             <outlet property="title" destination="jae-GF-Ul8" id="hux-Qe-gdA"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="6am-Iz-e7t">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="stop" id="PWY-eJ-uaH">
+                            <connections>
+                                <action selector="rightNavigationItemDidTap:" destination="apC-9D-qcK" id="B3m-Oh-zsu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrN-vS-pAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="t7a-He-6Cn" customClass="DetailsModuleInitializer" customModule="MVC_IN_ACTION" customModuleProvider="target">

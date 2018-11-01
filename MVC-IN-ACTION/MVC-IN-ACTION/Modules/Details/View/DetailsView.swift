@@ -8,13 +8,21 @@
 
 import UIKit
 
-protocol DetailsViewInput: class, FeedItemViewType {}
+protocol DetailsViewInput: class, FeedItemViewType {
+    var closeAction: (() -> Void)? { get set }
+}
 
 final class DetailsView: UIView {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var text: UILabel!
+    
+    var closeAction: (() -> Void)?
+    
+    @IBAction func rightNavigationItemDidTap(_ sender: Any) {
+        closeAction?()
+    }
     
 }
 

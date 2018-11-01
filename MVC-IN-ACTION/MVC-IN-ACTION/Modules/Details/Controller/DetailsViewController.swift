@@ -17,6 +17,16 @@ final class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         contentView.display(model.item)
+        title = "Second Controller"
+        contentView.closeAction = { [unowned self] in
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("navigation controller \(String(describing: navigationController?.viewControllers.count))")
     }
     
 }
